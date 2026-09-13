@@ -25,7 +25,7 @@
   },
   {
     "name": "Steam",
-    "icon": "/images/icon/steam.png",
+    "icon": "/images/icon/steam.svg",
     "tip": "去 Steam 主页看看",
     "url": "https://steamcommunity.com/profiles/76561199835536709/"
   },
