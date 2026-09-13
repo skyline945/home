@@ -17,7 +17,7 @@ const siteConfig = {
   descTextOther: "哎呀，这都被你发现了（ 再点击一次可关闭 ）",
 
   // 天气 Key（留空则使用备用天气接口）
-  weatherKey: "",
+  weatherKey: "e69b84898b67c40fd86e24b28314c18a",
 
   // 建站日期
   siteStart: "2026-09-13",
