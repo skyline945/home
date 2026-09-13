@@ -1,5 +1,6 @@
 // import axios from "axios";
 import fetchJsonp from "fetch-jsonp";
+import siteConfig from "@/config";
 
 /**
  * 音乐播放器
@@ -8,7 +9,7 @@ import fetchJsonp from "fetch-jsonp";
 // 获取音乐播放列表
 export const getPlayerList = async (server, type, id) => {
   const res = await fetch(
-    `${import.meta.env.VITE_SONG_API}?server=${server}&type=${type}&id=${id}`,
+    `${siteConfig.songApi}?server=${server}&type=${type}&id=${id}`,
   );
   const data = await res.json();
 

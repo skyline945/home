@@ -20,9 +20,10 @@
 <script setup>
 import { getAdcode, getWeather, getOtherWeather } from "@/api";
 import { Error } from "@icon-park/vue-next";
+import siteConfig from "@/config";
 
 // 高德开发者 Key
-const mainKey = import.meta.env.VITE_WEATHER_KEY;
+const mainKey = siteConfig.weatherKey;
 
 // 天气数据
 const weatherData = reactive({

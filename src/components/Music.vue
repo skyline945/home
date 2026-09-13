@@ -81,6 +81,7 @@ import {
 } from "@icon-park/vue-next";
 import Player from "@/components/Player.vue";
 import { mainStore } from "@/store";
+import siteConfig from "@/config";
 const store = mainStore();
 
 // 音量条数据
@@ -91,9 +92,9 @@ const volumeNum = ref(store.musicVolume ? store.musicVolume : 0.7);
 const musicListShow = ref(false);
 const playerRef = ref(null);
 const playerData = reactive({
-  server: import.meta.env.VITE_SONG_SERVER,
-  type: import.meta.env.VITE_SONG_TYPE,
-  id: import.meta.env.VITE_SONG_ID,
+  server: siteConfig.songServer,
+  type: siteConfig.songType,
+  id: siteConfig.songId,
 });
 
 // 开启播放列表

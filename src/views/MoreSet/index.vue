@@ -55,12 +55,13 @@ import { CloseOne, SettingTwo, GithubOne, AddOne, Bug } from "@icon-park/vue-nex
 import { mainStore } from "@/store";
 import Set from "@/components/Set.vue";
 import config from "@/../package.json";
+import siteConfig from "@/config";
 
 const store = mainStore();
 const closeShow = ref(false);
 
 // 站点名称
-const siteName = import.meta.env.VITE_SITE_NAME;
+const siteName = siteConfig.siteName;
 
 // 更新日志
 const upData = reactive({

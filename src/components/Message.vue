@@ -33,17 +33,18 @@ import { Icon } from "@vicons/utils";
 import { QuoteLeft, QuoteRight } from "@vicons/fa";
 import { Error } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
+import siteConfig from "@/config";
 const store = mainStore();
 
 // 主页站点logo
-const siteLogo = import.meta.env.VITE_SITE_MAIN_LOGO;
+const siteLogo = siteConfig.siteMainLogo;
 // 站点名称
-const siteName = import.meta.env.VITE_SITE_NAME;
+const siteName = siteConfig.siteName;
 
 // 简介区域文字
 const descriptionText = reactive({
-  hello: import.meta.env.VITE_DESC_HELLO,
-  text: import.meta.env.VITE_DESC_TEXT,
+  hello: siteConfig.descHello,
+  text: siteConfig.descText,
 });
 
 // 切换右侧功能区
@@ -67,11 +68,11 @@ watch(
   () => store.boxOpenState,
   (value) => {
     if (value) {
-      descriptionText.hello = import.meta.env.VITE_DESC_HELLO_OTHER;
-      descriptionText.text = import.meta.env.VITE_DESC_TEXT_OTHER;
+      descriptionText.hello = siteConfig.descHelloOther;
+      descriptionText.text = siteConfig.descTextOther;
     } else {
-      descriptionText.hello = import.meta.env.VITE_DESC_HELLO;
-      descriptionText.text = import.meta.env.VITE_DESC_TEXT;
+      descriptionText.hello = siteConfig.descHello;
+      descriptionText.text = siteConfig.descText;
     }
   },
 );

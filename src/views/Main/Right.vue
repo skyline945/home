@@ -13,12 +13,13 @@
 
 <script setup>
 import { mainStore } from "@/store";
+import siteConfig from "@/config";
 import Func from "@/views/Func/index.vue";
 import Link from "@/components/Links.vue";
 const store = mainStore();
 
 // 站点名称
-const siteName = import.meta.env.VITE_SITE_NAME;
+const siteName = siteConfig.siteName;
 </script>
 
 <style lang="scss" scoped>

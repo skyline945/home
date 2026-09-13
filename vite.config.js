@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig } from "vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { resolve } from "path";
 import { VitePWA } from "vite-plugin-pwa";
@@ -43,9 +43,9 @@ export default ({ mode }) =>
           ],
         },
         manifest: {
-          name: loadEnv(mode, process.cwd()).VITE_SITE_NAME,
-          short_name: loadEnv(mode, process.cwd()).VITE_SITE_NAME,
-          description: loadEnv(mode, process.cwd()).VITE_SITE_DES,
+          name: "skyline",
+          short_name: "skyline",
+          description: "人无法同时拥有青春和对青春的感受",
           display: "standalone",
           start_url: "/",
           theme_color: "#424242",
