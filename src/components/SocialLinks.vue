@@ -52,11 +52,10 @@ const clickItem = async (item) => {
 .social {
   margin-top: 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   max-width: 460px;
   width: 100%;
-  height: 42px;
   background-color: transparent;
   border-radius: 6px;
   backdrop-filter: blur(0);
@@ -99,7 +98,10 @@ const clickItem = async (item) => {
   }
   .tip {
     display: none;
-    margin-right: 12px;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    white-space: nowrap;
     animation: fade 0.5s;
   }
   @media (min-width: 768px) {
