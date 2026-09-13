@@ -20,8 +20,8 @@
   {
     "name": "QQ",
     "icon": "/images/icon/qq.png",
-    "tip": "有什么事吗",
-    "url": "https://res.abeim.cn/api/qq/?qq=1296180033"
+    "tip": "点击复制 QQ：1296180033",
+    "copy": "1296180033"
   },
   {
     "name": "Steam",
