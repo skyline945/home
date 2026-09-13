@@ -2,16 +2,21 @@
   <!-- 社交链接 -->
   <div class="social">
     <div class="link">
-      <a
+      <component
         v-for="item in socialLinks"
         :key="item.name"
-        :href="item.url"
-        target="_blank"
+        :is="item.url ? 'a' : 'span'"
+        :href="item.url || undefined"
+        :target="item.url ? '_blank' : undefined"
+        :rel="item.url ? 'noopener' : undefined"
+        class="social-item"
+        :class="{ 'is-copy': !!item.copy }"
+        @click="clickItem(item)"
         @mouseenter="socialTip = item.tip"
         @mouseleave="socialTip = '通过这里联系我吧'"
       >
         <img class="icon" :src="item.icon" height="24" />
-      </a>
+      </component>
     </div>
     <span class="tip">{{ socialTip }}</span>
   </div>
@@ -22,6 +27,25 @@ import socialLinks from "@/assets/socialLinks.json";
 
 // 社交链接提示
 const socialTip = ref("通过这里联系我吧");
+
+// 点击复制（用于没有链接、只有 ID 的项）
+const clickItem = async (item) => {
+  if (!item.copy) return;
+  try {
+    await navigator.clipboard.writeText(item.copy);
+    ElMessage({
+      message: `已复制：${item.copy}`,
+      type: "success",
+      grouping: true,
+    });
+  } catch {
+    ElMessage({
+      message: "复制失败，请手动复制",
+      type: "error",
+      grouping: true,
+    });
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -56,8 +80,11 @@ const socialTip = ref("通过这里联系我吧");
     display: flex;
     align-items: center;
     justify-content: center;
-    a {
+    .social-item {
       display: inherit;
+      &.is-copy {
+        cursor: pointer;
+      }
       .icon {
         margin: 0 12px;
         transition: transform 0.3s;
